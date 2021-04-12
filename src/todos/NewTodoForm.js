@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, ButtonToolbar} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import { addTodoRequest } from './thunks';
 import './NewTodoForm.css';
@@ -15,7 +16,7 @@ const NewTodoForm = ({todos,onCreatePressed}) => {
                 placeholder="Type your new todo here nowww!!"
                 value={inputValue}
                 onChange={e => setInputValue(e.target.value)} />
-            <button 
+            <Button variant="outline-primary" 
             //define an anonymous function which will call onCreate
             //we dont want duplicate todos
             //we want to clear the input value upon onclick
@@ -27,7 +28,7 @@ const NewTodoForm = ({todos,onCreatePressed}) => {
                     setInputValue('');
                 }
             }}
-            className="new-todo-button">Create Todo</button>
+            className="new-todo-button">Create Todo</Button>
         </div>
     );
 };

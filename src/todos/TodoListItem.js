@@ -1,18 +1,19 @@
 import React from 'react';
+import { Button, ButtonToolbar} from 'react-bootstrap';
 import './TodoListItem.css';
 
 const TodoListItem = ({ todo, onRemovePressed,onCompletedPressed }) => (
     <div className="todo-item-container">
-        <h3>{todo.text}</h3>
+        <p>{todo.text}</p>
         <div className="buttons-container">
             {todo.isCompleted
                 ? null
-                : <button 
+                : <Button variant="outline-secondary" className="ml-1"
                 onClick={() => onCompletedPressed(todo.id)}
-                className="completed-button">Mark As Completed</button>}
-            <button
+                className="completed-button">Mark As Completed</Button>}
+            <Button variant="outline-secondary"
                 onClick={() => onRemovePressed(todo.id)}
-                className="remove-button">Remove</button>
+                className="remove-button">Remove</Button>
         </div>
     </div>
 );
